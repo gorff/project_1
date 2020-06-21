@@ -7,6 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
+Transaction.destroy_all
+Trip.destroy_all
+Stop.destroy_all
+Line.destroy_all
+Edge.destroy_all
+
+
+
 u1 = User.create :name => "Joshua McDonald", :email => 'jonesy@ga.co', :balance => 10.5, :password => 'chicken'
 u2 = User.create :name => "Aleks", :email => 'aleks@ga.co', :balance => 4, :password => 'chicken'
 u3 = User.create :name => "John", :email => 'john@yahoo.com', :balance => 12, :password => 'chicken'
@@ -15,50 +23,45 @@ u5 = User.create :name => "Tracy", :email => 'tracygirl66@gmail.com', :balance =
 u6 = User.create :name => "Kate", :email => 'kate@microsoft.com', :balance => 8, :password => 'chicken'
 puts "#{ User.count } users"
 
-Transaction.destroy_all
-ts1 = Transaction.create :user => u1, :amount => 10 
-ts2 = Transaction.create :user => u2,:amount => 15 
-ts3 = Transaction.create :user => u3,:amount => 20 
-ts4 = Transaction.create :user => u4,:amount => 20 
-ts5 = Transaction.create :user => u5,:amount => 50 
-puts "#{ Transaction.count } Transactions"
+# ts1 = Transaction.create :user => u1, :amount => 10 
+# ts2 = Transaction.create :user => u2,:amount => 15 
+# ts3 = Transaction.create :user => u3,:amount => 20 
+# ts4 = Transaction.create :user => u4,:amount => 20 
+# ts5 = Transaction.create :user => u5,:amount => 50 
+# puts "#{ Transaction.count } Transactions"
 
-Trip.destroy_all
-tr1 = Trip.create 
-tr2 = Trip.create 
-tr3 = Trip.create 
-tr4 = Trip.create 
-tr5 = Trip.create 
-puts "#{ Trip.count } Trips"
+# tr1 = Trip.create :user => u1, :start => stopIdabashi, :end => stopShibuya
+# tr2 = Trip.create :user => u2, :start => stopIdabashi, :end => stopShinjuku
+# tr3 = Trip.create :user => u3, :start => stopIkebukuro, :end =>stopUeno
+# tr4 = Trip.create :user => u4, :start => stopOdaiba, :end => stopShinjuku
+# tr5 = Trip.create :user => u5, :start => stopRoppongi, :end => stopIdabashi
+# puts "#{ Trip.count } Trips"
 
-Stop.destroy_all
-stopSunshine = Stop.create :name => "Sunshine City", :operational => true, :location_x =>3 , :location_y =>2 
-stopPokemon = Stop.create :name => "Pokemon Centre", :operational => true, :location_x => 13, :location_y =>2 
-stopIkebukuro = Stop.create :name => "Ikebukuro", :operational => true, :location_x => 4, :location_y =>7 
-stopUeno = Stop.create :name => "Ueno", :operational => true, :location_x => 9, :location_y =>6 
-stopShimbashi = Stop.create :name => "Shimbashi", :operational => true, :location_x => 12, :location_y => 11
-stopIdabashi = Stop.create :name => "Idabashi", :operational => true, :location_x => 7, :location_y => 11 
-stopShinjuku = Stop.create :name => "Shinjuku", :operational => true, :location_x => 2, :location_y => 11
-stopShibuya = Stop.create :name => "Shibuya", :operational => true, :location_x => 5, :location_y => 16
-stopRoppongi = Stop.create :name => "Roppongi", :operational => true, :location_x => 10, :location_y => 16
-stopRamen = Stop.create :name => "Ramen Museum", :operational => true, :location_x => 2, :location_y => 21
-stopOdaiba = Stop.create :name => "Odaiba", :operational => true, :location_x => 13, :location_y => 20
-puts "#{ Stop.count } Stops"
+# stopSunshine = Stop.create :name => "Sunshine City", :operational => true, :location_x =>3 , :location_y =>2 
+# stopPokemon = Stop.create :name => "Pokemon Centre", :operational => true, :location_x => 13, :location_y =>2 
+# stopIkebukuro = Stop.create :name => "Ikebukuro", :operational => true, :location_x => 4, :location_y =>7 
+# stopUeno = Stop.create :name => "Ueno", :operational => true, :location_x => 9, :location_y =>6 
+# stopShimbashi = Stop.create :name => "Shimbashi", :operational => true, :location_x => 12, :location_y => 11
+# stopIdabashi = Stop.create :name => "Idabashi", :operational => true, :location_x => 7, :location_y => 11 
+# stopShinjuku = Stop.create :name => "Shinjuku", :operational => true, :location_x => 2, :location_y => 11
+# stopShibuya = Stop.create :name => "Shibuya", :operational => true, :location_x => 5, :location_y => 16
+# stopRoppongi = Stop.create :name => "Roppongi", :operational => true, :location_x => 10, :location_y => 16
+# stopRamen = Stop.create :name => "Ramen Museum", :operational => true, :location_x => 2, :location_y => 21
+# stopOdaiba = Stop.create :name => "Odaiba", :operational => true, :location_x => 13, :location_y => 20
+# puts "#{ Stop.count } Stops"
 
 
-Line.destroy_all
-blueLine = Line.create :name => "Blue Line", :color => "blue"
-redLine = Line.create :name => "Red Line", :color => "red"
-greenLine = Line.create :name => "Green Line", :color => "green"
-puts "#{ Line.count } Lines"
+# blueLine = Line.create :name => "Blue Line", :color => "blue"
+# redLine = Line.create :name => "Red Line", :color => "red"
+# greenLine = Line.create :name => "Green Line", :color => "green"
+# puts "#{ Line.count } Lines"
 
 
-Edge.destroy_all
-e1 = Edge.create 
-e2 = Edge.create 
-e3 = Edge.create 
-e4 = Edge.create 
-puts "#{ Edge.count } Edges"
+# e1 = Edge.create 
+# e2 = Edge.create 
+# e3 = Edge.create 
+# e4 = Edge.create 
+# puts "#{ Edge.count } Edges"
 
 
 
