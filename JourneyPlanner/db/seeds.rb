@@ -7,20 +7,20 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
-u1 = User.create :name => "Joshua McDonald" :email => 'jonesy@ga.co', :balance => 10.5, :password => 'chicken'
-u2 = User.create :name => "Aleks" :email => 'aleks@ga.co', :balance => 4, :password => 'chicken'
-u3 = User.create :name => "John" :email => 'john@yahoo.com', :balance => 12, :password => 'chicken'
-u4 = User.create :name => "James" :email => 'james@ga.co', :balance => 4, :password => 'chicken'
-u5 = User.create :name => "Tracy" :email => 'tracygirl66@gmail.com', :balance => 6, :password => 'chicken'
-u6 = User.create :name => "Kate" :email => 'kate@microsoft.com', :balance => 8, :password => 'chicken'
+u1 = User.create :name => "Joshua McDonald", :email => 'jonesy@ga.co', :balance => 10.5, :password => 'chicken'
+u2 = User.create :name => "Aleks", :email => 'aleks@ga.co', :balance => 4, :password => 'chicken'
+u3 = User.create :name => "John", :email => 'john@yahoo.com', :balance => 12, :password => 'chicken'
+u4 = User.create :name => "James", :email => 'james@ga.co', :balance => 4, :password => 'chicken'
+u5 = User.create :name => "Tracy", :email => 'tracygirl66@gmail.com', :balance => 6, :password => 'chicken'
+u6 = User.create :name => "Kate", :email => 'kate@microsoft.com', :balance => 8, :password => 'chicken'
 puts "#{ User.count } users"
 
 Transaction.destroy_all
-ts1 = Transaction.create :amount => 10 
-ts2 = Transaction.create :amount => 15 
-ts3 = Transaction.create :amount => 20 
-ts4 = Transaction.create :amount => 20 
-ts5 = Transaction.create :amount => 50 
+ts1 = Transaction.create :user => u1, :amount => 10 
+ts2 = Transaction.create :user => u2,:amount => 15 
+ts3 = Transaction.create :user => u3,:amount => 20 
+ts4 = Transaction.create :user => u4,:amount => 20 
+ts5 = Transaction.create :user => u5,:amount => 50 
 puts "#{ Transaction.count } Transactions"
 
 Trip.destroy_all
@@ -62,83 +62,83 @@ puts "#{ Edge.count } Edges"
 
 
 
-# Associations #################################################################
-blueLine.stops << stopRamen << stopRoppongi << stopShimbashi << stopUeno << stopPokemon
-redLine.stops << stopShibuya << stopRoppongi << stopShimbashi << stopUeno << stopIkebukuro << stopShinjuku
-greenLine.stops << stopSunshine << stopIkebukuro << stopIkebukuro << stopRoppongi << stopOdaiba 
+# # Associations #################################################################
+# blueLine.stops << stopRamen << stopRoppongi << stopShimbashi << stopUeno << stopPokemon
+# redLine.stops << stopShibuya << stopRoppongi << stopShimbashi << stopUeno << stopIkebukuro << stopShinjuku
+# greenLine.stops << stopSunshine << stopIkebukuro << stopIkebukuro << stopRoppongi << stopOdaiba 
 
-u1.transactions << ts1 <<ts2 << ts3
-u2.transactions << ts4 << ts5
+# u1.transaction << ts1 <<ts2 << ts3
+# u2.transaction << ts4 << ts5
 
-u1.trips << tr1 <<tr2 << tr3
-u2.trips << tr4 << tr5
+# u1.trips << tr1 <<tr2 << tr3
+# u2.trips << tr4 << tr5
 
-stopOdaiba.start << tr1 << tr2 
-stopPokemon.start << tr3 << tr4
-stopShimbashi.start << tr5
+# stopOdaiba.start << tr1 << tr2 
+# stopPokemon.start << tr3 << tr4
+# stopShimbashi.start << tr5
 
-stopRamen.end << tr3 << tr2 
-stopRoppongi.end << tr1 << tr5
-stopOdaiba.end << tr4
+# stopRamen.end << tr3 << tr2 
+# stopRoppongi.end << tr1 << tr5
+# stopOdaiba.end << tr4
 
 
-# edges # 
-stopSunshine.from <<  stopIkebukuro
-stopSunshine.to <<  stopIkebukuro
-stopIkebukuro.from << stopSunshine
-stopIkebukuro.to << stopSunshine
+# # edges # 
+# stopSunshine.from <<  stopIkebukuro
+# stopSunshine.to <<  stopIkebukuro
+# stopIkebukuro.from << stopSunshine
+# stopIkebukuro.to << stopSunshine
 
-stopIkebukuro.from << stopUeno
-stopIkebukuro.to << stopUeno
-stopUeno.from << stopIkebukuro
-stopUeno.to << stopIkebukuro
+# stopIkebukuro.from << stopUeno
+# stopIkebukuro.to << stopUeno
+# stopUeno.from << stopIkebukuro
+# stopUeno.to << stopIkebukuro
 
-stopUeno.from << stopPokemon
-stopUeno.to << stopPokemon
-stopPokemon.from << stopUeno
-stopPokemon.to << stopUeno
+# stopUeno.from << stopPokemon
+# stopUeno.to << stopPokemon
+# stopPokemon.from << stopUeno
+# stopPokemon.to << stopUeno
 
-stopUeno.from << stopShimbashi
-stopUeno.to << stopShimbashi
-stopShimbashi.from << stopUeno
-stopShimbashi.to << stopUeno
+# stopUeno.from << stopShimbashi
+# stopUeno.to << stopShimbashi
+# stopShimbashi.from << stopUeno
+# stopShimbashi.to << stopUeno
 
-stopShimbashi.from << stopRoppongi
-stopShimbashi.to << stopRoppongi
-stopRoppongi.from << stopShimbashi
-stopRoppongi.to << stopShimbashi
+# stopShimbashi.from << stopRoppongi
+# stopShimbashi.to << stopRoppongi
+# stopRoppongi.from << stopShimbashi
+# stopRoppongi.to << stopShimbashi
 
-stopRoppongi.from << stopOdaiba
-stopRoppongi.to << stopOdaiba
-stopOdaiba.from << stopRoppongi
-stopOdaiba.to << stopRoppongi
+# stopRoppongi.from << stopOdaiba
+# stopRoppongi.to << stopOdaiba
+# stopOdaiba.from << stopRoppongi
+# stopOdaiba.to << stopRoppongi
 
-stopRamen.from << stopRoppongi
-stopRamen.to << stopRoppongi
-stopRoppongi.from << stopRamen
-stopRoppongi.to << stopRamen
+# stopRamen.from << stopRoppongi
+# stopRamen.to << stopRoppongi
+# stopRoppongi.from << stopRamen
+# stopRoppongi.to << stopRamen
 
-stopRoppongi.from << stopShibuya
-stopRoppongi.to << stopShibuya
-stopShibuya.from << stopRoppongi
-stopShibuya.to << stopRoppongi
+# stopRoppongi.from << stopShibuya
+# stopRoppongi.to << stopShibuya
+# stopShibuya.from << stopRoppongi
+# stopShibuya.to << stopRoppongi
 
-stopShibuya.from << stopShinjuku
-stopShibuya.to << stopShinjuku
-stopShinjuku.from << stopShibuya
-stopShinjuku.to << stopShibuya
+# stopShibuya.from << stopShinjuku
+# stopShibuya.to << stopShinjuku
+# stopShinjuku.from << stopShibuya
+# stopShinjuku.to << stopShibuya
 
-stopShinjuku.from << stopIkebukuro
-stopShinjuku.to << stopIkebukuro
-stopIkebukuro.from << stopShinjuku
-stopIkebukuro.to << stopShinjuku
+# stopShinjuku.from << stopIkebukuro
+# stopShinjuku.to << stopIkebukuro
+# stopIkebukuro.from << stopShinjuku
+# stopIkebukuro.to << stopShinjuku
 
-stopIkebukuro.from << stopIdabashi
-stopIkebukuro.to << stopIdabashi
-stopIdabashi.from << stopIkebukuro
-stopIdabashi.to << stopIkebukuro
+# stopIkebukuro.from << stopIdabashi
+# stopIkebukuro.to << stopIdabashi
+# stopIdabashi.from << stopIkebukuro
+# stopIdabashi.to << stopIkebukuro
 
-stopIdabashi.from << stopRoppongi
-stopIdabashi.to << stopRoppongi
-stopRoppongi.from << stopIdabashi
-stopRoppongi.to << stopIdabashi
+# stopIdabashi.from << stopRoppongi
+# stopIdabashi.to << stopRoppongi
+# stopRoppongi.from << stopIdabashi
+# stopRoppongi.to << stopIdabashi
