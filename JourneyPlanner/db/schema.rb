@@ -24,22 +24,13 @@ ActiveRecord::Schema.define(version: 2020_06_20_083108) do
     t.index ["to_id"], name: "index_edges_on_to_id"
   end
 
-  create_table "lines", force: :cascade do |t|
-    t.text "name"
-    t.text "color"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "stops", force: :cascade do |t|
     t.text "name"
-    t.bigint "line_id"
     t.boolean "operational"
     t.decimal "location_x"
     t.decimal "location_y"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["line_id"], name: "index_stops_on_line_id"
   end
 
   create_table "transactions", force: :cascade do |t|
