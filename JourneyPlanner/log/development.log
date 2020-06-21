@@ -472,3 +472,111 @@ FOREIGN KEY ("line_id_id")
   ↳ /usr/share/rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
   [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7934442974277155700)[0m
   ↳ /usr/share/rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7934442974277155700)[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+Migrating to CreateStops (20200620083011)
+  [1m[35m (4.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (12.0ms)[0m  [1m[35mCREATE TABLE "stops" ("id" bigserial primary key, "name" text, "line_id" bigint, "operational" boolean, "location_x" decimal, "location_y" decimal, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_cc128cae12"
+FOREIGN KEY ("line_id")
+  REFERENCES "lines" ("id")
+)[0m
+  ↳ db/migrate/20200620083011_create_stops.rb:3
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7934442974277155700)[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7934442974277155700)[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+Migrating to CreateStops (20200620083011)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (10.4ms)[0m  [1m[35mCREATE TABLE "stops" ("id" bigserial primary key, "name" text, "line_id" bigint, "operational" boolean, "location_x" decimal, "location_y" decimal, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_cc128cae12"
+FOREIGN KEY ("line_id")
+  REFERENCES "lines" ("id")
+)[0m
+  ↳ db/migrate/20200620083011_create_stops.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7934442974277155700)[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7934442974277155700)[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+Migrating to CreateStops (20200620083011)
+  [1m[35m (4.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (12.4ms)[0m  [1m[35mCREATE TABLE "stops" ("id" bigserial primary key, "name" text, "line_id" bigint, "operational" boolean, "location_x" decimal, "location_y" decimal, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200620083011_create_stops.rb:3
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE  INDEX  "index_stops_on_line_id" ON "stops"  ("line_id")[0m
+  ↳ db/migrate/20200620083011_create_stops.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (4.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200620083011"]]
+  ↳ /usr/share/rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+Migrating to CreateLines (20200620083037)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE TABLE "lines" ("id" bigserial primary key, "name" text, "color" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200620083037_create_lines.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200620083037"]]
+  ↳ /usr/share/rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+Migrating to CreateEdges (20200620083108)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "edges" ("id" bigserial primary key, "from_id" bigint, "to_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_080d246a43"
+FOREIGN KEY ("from_id")
+  REFERENCES "froms" ("id")
+, CONSTRAINT "fk_rails_b22511a0e4"
+FOREIGN KEY ("to_id")
+  REFERENCES "tos" ("id")
+)[0m
+  ↳ db/migrate/20200620083108_create_edges.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7934442974277155700)[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7934442974277155700)[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+Migrating to CreateEdges (20200620083108)
+  [1m[35m (4.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE TABLE "edges" ("id" bigserial primary key, "from_id" bigint, "to_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_080d246a43"
+FOREIGN KEY ("from_id")
+  REFERENCES "stops" ("id")
+, CONSTRAINT "fk_rails_b22511a0e4"
+FOREIGN KEY ("to_id")
+  REFERENCES "stops" ("id")
+)[0m
+  ↳ db/migrate/20200620083108_create_edges.rb:3
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE  INDEX  "index_edges_on_from_id" ON "edges"  ("from_id")[0m
+  ↳ db/migrate/20200620083108_create_edges.rb:3
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE  INDEX  "index_edges_on_to_id" ON "edges"  ("to_id")[0m
+  ↳ db/migrate/20200620083108_create_edges.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (5.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200620083108"]]
+  ↳ /usr/share/rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/share/rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-06-21 03:32:32.621594"], ["updated_at", "2020-06-21 03:32:32.621594"]]
+  ↳ /usr/share/rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7934442974277155700)[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/share/rvm/rubies/ruby-2.7.0/lib/ruby/gems/2.7.0/gems/rake-13.0.1/lib/rake/task.rb:281

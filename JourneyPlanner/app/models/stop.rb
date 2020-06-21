@@ -1,5 +1,5 @@
 class Stop < ApplicationRecord
-  belongs_to :line  
+  belongs_to :line
   has_many :edges
 
   # has_many :trips 
