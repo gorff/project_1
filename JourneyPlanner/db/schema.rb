@@ -52,10 +52,12 @@ ActiveRecord::Schema.define(version: 2020_06_20_083108) do
 
   create_table "trips", force: :cascade do |t|
     t.bigint "user_id"
-    t.text "start"
-    t.text "end"
+    t.integer "start_id"
+    t.integer "end_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["end_id"], name: "index_trips_on_end_id"
+    t.index ["start_id"], name: "index_trips_on_start_id"
     t.index ["user_id"], name: "index_trips_on_user_id"
   end
 
@@ -72,5 +74,7 @@ ActiveRecord::Schema.define(version: 2020_06_20_083108) do
   add_foreign_key "edges", "stops", column: "from_id"
   add_foreign_key "edges", "stops", column: "to_id"
   add_foreign_key "transactions", "users"
+  add_foreign_key "trips", "stops", column: "end_id"
+  add_foreign_key "trips", "stops", column: "start_id"
   add_foreign_key "trips", "users"
 end
